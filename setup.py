@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="xfce-repocapp-KEVIN-BOWEN",
-    version="0.8.6",
+    name="django-repocapp-KEVIN-BOWEN",
+    version="0.1.0",
     author="Kevin Bowen",
     author_email="kevin.bowen@gmail.com",
-    description="Scripts for managing Xfce repositories",
+    description="Scripts for managing Django repositories",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/kevinbowen/xfce-repocapp",
+    url="https://gitlab.com/kevinbowen/django-repocapp",
     project_urls={
-        "Bug Tracker": "https://gitlab.com/kevinbowen/xfce-repocapp/issues",
+        "Bug Tracker": "https://gitlab.com/kevinbowen/django-repocapp/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
