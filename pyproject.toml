@@ -17,11 +17,11 @@ exclude = '''
 '''
 
 [tool.coverage.paths]
-source = ["xfce_repocapp"]
+source = ["django_repocapp"]
 
 [tool.coverage.run]
 branch = true
-source = ["xfce_repocapp"]
+source = ["django_repocapp"]
 omit = [
     "*/__init__.py",
     "*tests/*",
@@ -40,14 +40,14 @@ extend_skip = ["*.md", "*.json"]
 line_length = 79
 
 [tool.poetry]
-name = "xfce_repocapp"
-version = "0.8.6"
-description = "A collection of scripts to maintain local Xfce repositories"
+name = "django-repocapp"
+version = "0.1.0"
+description = "A collection of scripts to maintain local Django repositories"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
 license = "GPL-2.0-only"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
