@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 """
-Name: pull_xfce.py
-Purpose: update local Xfce repositories pulled from
-           https://gitlab.xfce.org
+Name: pull_django.py
+Purpose: update local Django repositories pulled from
+           https://gitlab.com/kevinbowen/
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 
@@ -18,7 +18,7 @@ import sys
 from cappdata import component_list
 
 parser = argparse.ArgumentParser(
-    description="Pull/update groups of Xfce components"
+    description="Pull/update groups of Django components"
     " from https://gitlab.xfce.org repositories."
 )
 parser.add_argument(
@@ -34,7 +34,7 @@ parser.add_argument(
         "www",
         "all_components",
     ],
-    help="specify an Xfce component group to pull/update"
+    help="specify an Django component group to pull/update"
     " from https://gitlab.xfce.org.",
 )
 parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
@@ -49,7 +49,7 @@ if args.component is None:
 
 def pull_xfce(component, comp_list):
     """Run 'git pull' on selected components to update repositories."""
-    print(f"Updating the Xfce {component} group...")
+    print(f"Updating the Django {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
@@ -118,5 +118,5 @@ if __name__ == "__main__":
         main(component_group)
     except KeyboardInterrupt:
         print()
-        print("Stopped xfce-repocapp. Exiting...")
+        print("Stopped django-repocapp. Exiting...")
         sys.exit()

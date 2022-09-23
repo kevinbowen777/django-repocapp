@@ -2,12 +2,12 @@
 
 """
 Name: repocapp.py
-Purpose: Clones Xfce repositories pulled from
-           https://gitlab.xfce.org/
+Purpose: Clones Django repositories pulled from
+           https://gitlab.com/kevinbowen/django-repocapp/
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220101
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 
@@ -80,7 +80,7 @@ def main_menu():
     """Display selection of available actions to take with repositories."""
     os.system("clear")
     main_banner = (
-        "\u2248: xfce-repocapp: local " "Xfce repository maintenance :\u2248"
+        "\u2248: django-repocapp: local " "Django repository maintenance :\u2248"
     )
     border = "\u2248" * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
@@ -111,7 +111,7 @@ def sub_menus(action):
     """Display actions to take upon a specific repository."""
     os.system("clear")
     banner = (
-        f"\u2248: xfce-repocapp: {action} " f"local Xfce repositories :\u2248"
+        f"\u2248: django-repocapp: {action} " f"local Django repositories :\u2248"
     )
     border = "\u2248" * len(banner)
     print(f"{border}\n{banner}\n{border}")
@@ -156,5 +156,5 @@ if __name__ == "__main__":
         main_menu()
     except KeyboardInterrupt:
         print()
-        print("Stopped xfce-repocapp. Exiting...")
+        print("Stopped django-repocapp. Exiting...")
         sys.exit()

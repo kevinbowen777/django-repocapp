@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 """
-Name: install_xfce.py
-Purpose: Install Xfce components into system
+Name: install_django.py
+Purpose: Install Django components into system
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 
@@ -17,7 +17,7 @@ import sys
 from cappdata import component_list, query_yes_no
 
 parser = argparse.ArgumentParser(
-    description="Install groups of Xfce components"
+    description="Install groups of Django components"
     " either locally or system-wide."
 )
 parser.add_argument(
@@ -33,7 +33,7 @@ parser.add_argument(
         "www",
         "all_components",
     ],
-    help="specify an Xfce component group to install"
+    help="specify an Django component group to install"
     " either locally or system-wide.",
 )
 parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
@@ -48,7 +48,7 @@ if args.component is None:
 
 def install_xfce(component, comp_list):
     """Run 'make install' or 'sudo make install' on selected components."""
-    print(f"Installing the Xfce {component} group...")
+    print(f"Installing the Django {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
@@ -121,5 +121,5 @@ if __name__ == "__main__":
         main(component_group)
     except KeyboardInterrupt:
         print()
-        print("Stopped xfce-repocapp. Exiting...")
+        print("Stopped django-repocapp. Exiting...")
         sys.exit()

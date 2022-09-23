@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 """
-Name: clean_xfce.py
-Purpose: Clean local Xfce repository directories
+Name: clean_django.py
+Purpose: Clean local Django repository directories
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 
@@ -18,7 +18,7 @@ import time
 from cappdata import component_list
 
 parser = argparse.ArgumentParser(
-    description="Clean groups of Xfce local component directories."
+    description="Clean groups of Django local component directories."
 )
 parser.add_argument(
     "-c",
@@ -33,7 +33,7 @@ parser.add_argument(
         "www",
         "all_components",
     ],
-    help="Specify an Xfce component group" " directory to clean.",
+    help="Specify an Django component group" " directory to clean.",
 )
 parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
 args = parser.parse_args()
@@ -47,7 +47,7 @@ if args.component is None:
 
 def clean_xfce(component, comp_list):
     """Run make clean on component directories."""
-    print(f"Cleaning the Xfce {component} group...")
+    print(f"Cleaning the Django {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
@@ -118,5 +118,5 @@ if __name__ == "__main__":
         main(component_group)
     except KeyboardInterrupt:
         print()
-        print("Stopped xfce-repocapp. Exiting...")
+        print("Stopped django-repocapp. Exiting...")
         sys.exit()

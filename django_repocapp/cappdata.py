@@ -3,11 +3,11 @@
 """
 Name: cappdata.py
 Purpose: component lists and query function for use with
-           xfce-repocapp.py and associated scripts
+           django-repocapp.py and associated scripts
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 

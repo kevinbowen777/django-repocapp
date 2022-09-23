@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 """
-Name: purge_xfce.py
-Purpose: delete the local Xfce repositories originally pulled from
-           https://gitlab.xfce.org
+Name: purge_django.py
+Purpose: delete the local Django repositories originally pulled from
+           https://gitlab.com/kevinbowen/
 
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+source: https://gitlab.com/kevinbowen/django-repocapp
+version: 0.1.0
+updated: 20220922
 @author: kevin.bowen@gmail.com
 """
 
@@ -19,7 +19,7 @@ import sys
 from cappdata import component_list, query_yes_no
 
 parser = argparse.ArgumentParser(
-    description="Purge(Delete) groups of local Xfce component directories."
+    description="Purge(Delete) groups of local Django component directories."
 )
 parser.add_argument(
     "-c",
@@ -34,7 +34,7 @@ parser.add_argument(
         "www",
         "all_components",
     ],
-    help="Specify an Xfce component group to delete.",
+    help="Specify an Django component group to delete.",
 )
 parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
 args = parser.parse_args()
@@ -48,7 +48,7 @@ if args.component is None:
 
 def purge_xfce(component, comp_list):
     """Delete files and directories of selected components."""
-    print(f"Purging the Xfce {component} group...")
+    print(f"Purging the Django {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
@@ -64,7 +64,7 @@ def purge_xfce(component, comp_list):
 
     confirm = query_yes_no(
         f"Are you sure you want to remove the "
-        f"Xfce '{component}' repositories? "
+        f"Django '{component}' repositories? "
     )
 
     if confirm == "yes":
@@ -129,5 +129,5 @@ if __name__ == "__main__":
         main(component_group)
     except KeyboardInterrupt:
         print()
-        print("Stopped xfce-repocapp. Exiting...")
+        print("Stopped django-repocapp. Exiting...")
         sys.exit()
