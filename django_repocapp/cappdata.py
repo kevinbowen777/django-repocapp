@@ -18,33 +18,64 @@ import tty
 
 def component_list(component_group_list):
     """returns lists of components."""
-    if component_group_list == "apps":
-        apps = [
-            "bookstore",
+    if component_group_list == "django":
+        django = [
+            # "bookstore",
             # "cheese",
-            "djangdo",
-            "django_api",
-            "django_api-library",
-            "django_api-todo",
-            "django_blog",
-            "django_polls",
+            # "djangdo",
+            # "django_api",
+            # "django_api-library",
+            # "django_api-todo",
+            # "django_blog",
+            # "django_polls",
             "django_start",
-            "learning_log",
-            "library",
-            "message_board",
-            "news",
-            "pastebin-drf-api",
+            # "learning_log",
+            # "library",
+            # "message_board",
+            # "news",
+            # "pastebin-drf-api",
             # "superlists",
-            "api/djapi-library",
-            "djapi-todo",
-            "djapi-blog",
+            # "api/djapi-library",
+            # "djapi-todo",
+            # "djapi-blog",
         ]
-        return apps
+        return django
+
+
+    elif component_group_list == "djangorestframework":
+        djangorestframework = {
+            "django_api",
+            # "django_api-library"
+            # "django_api-todo"
+            "djapi-blog",
+            # "djapi-library",
+            # "djapi-todo",
+            # "pastebin-drf-api",
+        }
+        return djangorestframework
+
+
+    elif component_group_list == "flask":
+        flask = {
+            "flaskblog",
+            # "flask-chat",
+        }
+        return flask
+
+
+    elif component_group_list == "fastapi":
+        fastapi = {
+            "recipes",
+        }
+        return fastapi
 
 
     elif component_group_list == "all_components":
         all_components = {
-            "apps": "apps",
+            "django": "django",
+            "djangorestframework": "djangorestframework",
+            "flask": "flask",
+            "fastapi": "fastapi",
         }
         return all_components
 
