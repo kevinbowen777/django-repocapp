@@ -20,7 +20,7 @@ from cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description="clone groups of Django components"
-    " from https://gitlab.xfce.org repositories."
+    " from https://github.com/kevinbowen777 repositories."
 )
 parser.add_argument(
     "-c",
@@ -28,17 +28,12 @@ parser.add_argument(
     action="store",
     choices=[
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
-        "www",
         "all_components",
     ],
     help="specify an Django component group to clone"
-    " from https://gitlab.xfce.org",
+    " from https://github.com/kevinbowen777/",
 )
-parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
+parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
 args = parser.parse_args()
 if args.component is None:
     print(
@@ -50,13 +45,14 @@ if args.component is None:
 
 def clone_xfce(component, comp_list):
     """Run 'git clone' for selected components."""
-    print(f"Cloning the Django {component} group...")
+    # print(f"Cloning the Django {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
         installpath = os.path.abspath(
-            os.path.join(os.getcwd(), os.pardir, os.pardir, comp_group)
+            os.path.join(os.getcwd(), os.pardir, os.pardir)
+            # os.path.join(os.getcwd(), os.pardir, os.pardir, comp_group)
         )
 
         return installpath
@@ -73,7 +69,8 @@ def clone_xfce(component, comp_list):
             print("\u2248" * 16)
         else:
             try:
-                url = f"https://gitlab.xfce.org/{component}/{item}.git"
+                url = f"https://github.com/kevinbowen777/{item}.git"
+                # url = f"https://gitlab.xfce.org/{component}/{item}.git"
                 subprocess.run(["git", "clone", url], stdout=None, check=True)
                 success_count += 1
                 print("\u2248" * 16)
@@ -91,10 +88,10 @@ def clone_xfce(component, comp_list):
 
 
 def main(component_group_name):
-    """Build arguments to pass to clone_xfce() with a call to
+    """Build arguments to pass to clone_django() with a call to
     cappdata for component name list.
     command format:
-            clone_xfce(component='apps',
+            clone_django(component='apps',
                        comp_list='apps')
     """
     cgroup_listname = component_list(component_group_name)
