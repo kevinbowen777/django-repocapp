@@ -20,52 +20,26 @@ from cappdata import press_any_key
 menus = {
     "clone": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
-        "www",
         "all",
     ],
     "build": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
         "all",
     ],
     "install": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
         "all",
     ],
     "clean": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
         "all",
     ],
     "pull": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
-        "www",
         "all",
     ],
     "purge": [
         "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
         "www",
         "all",
     ],
@@ -141,7 +115,7 @@ def sub_menus(action):
                     component = "all_components"
                 else:
                     component = component_list[answer - 1]
-                script = action + "_xfce.py"
+                script = action + "_django.py"
                 command = f"{currentdir}/{script} -c {component}"
                 subprocess.run([command], shell=True)
                 press_any_key()
