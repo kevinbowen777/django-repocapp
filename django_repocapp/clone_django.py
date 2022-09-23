@@ -27,7 +27,10 @@ parser.add_argument(
     "--component",
     action="store",
     choices=[
-        "apps",
+        "django",
+        "djangorestframework",
+        "flask",
+        "fastapi",
         "all_components",
     ],
     help="specify an Django component group to clone"
@@ -38,9 +41,9 @@ args = parser.parse_args()
 if args.component is None:
     print(
         "No component was specified. Default to cloning"
-        " the 'apps' components...."
+        " the 'django' components...."
     )
-    args.component = "apps"
+    args.component = "django"
 
 
 def clone_xfce(component, comp_list):
@@ -51,8 +54,8 @@ def clone_xfce(component, comp_list):
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
         installpath = os.path.abspath(
-            os.path.join(os.getcwd(), os.pardir, os.pardir)
-            # os.path.join(os.getcwd(), os.pardir, os.pardir, comp_group)
+            # os.path.join(os.getcwd(), os.pardir, os.pardir)
+            os.path.join(os.getcwd(), os.pardir, os.pardir, comp_group)
         )
 
         return installpath
@@ -69,6 +72,7 @@ def clone_xfce(component, comp_list):
             print("\u2248" * 16)
         else:
             try:
+                # url = f"https://github.com/kevinbowen777/{component}/{item}.git"
                 url = f"https://github.com/kevinbowen777/{item}.git"
                 # url = f"https://gitlab.xfce.org/{component}/{item}.git"
                 subprocess.run(["git", "clone", url], stdout=None, check=True)
