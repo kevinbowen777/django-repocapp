@@ -30,7 +30,7 @@ def component_list(component_group_list):
             "django_polls",
             "django_start",
             "learning_log",
-            # "library",
+            "library",
             "message_board",
             "news",
             "pastebin-drf-api",
