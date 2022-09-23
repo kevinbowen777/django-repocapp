@@ -26,17 +26,15 @@ parser.add_argument(
     "--component",
     action="store",
     choices=[
-        "apps",
-        "bindings",
-        "xfce",
-        "panel-plugins",
-        "thunar-plugins",
-        "www",
+        "django",
+        "djangorestframework",
+        "flask",
+        "fastapi",
         "all_components",
     ],
     help="Specify an Django component group to delete.",
 )
-parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
+parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
 args = parser.parse_args()
 if args.component is None:
     print(
