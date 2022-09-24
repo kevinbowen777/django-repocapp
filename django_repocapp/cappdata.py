@@ -20,37 +20,30 @@ def component_list(component_group_list):
     """returns lists of components."""
     if component_group_list == "django":
         django = [
-            # "bookstore",
-            # "cheese",
-            # "djangdo",
-            # "django_api",
-            # "django_api-library",
-            # "django_api-todo",
-            # "django_blog",
-            # "django_polls",
-            "django_start",
-            # "learning_log",
-            # "library",
-            # "message_board",
-            # "news",
-            # "pastebin-drf-api",
-            # "superlists",
-            # "api/djapi-library",
-            # "djapi-todo",
-            # "djapi-blog",
+            "bookstore",
+            "cheese",
+            "django-todo",
+            "django-blog",
+            "django-polls",
+            "django-start",
+            "learning-log",
+            "library",
+            "message-board",
+            "news",
+            "superlists",
         ]
         return django
 
 
     elif component_group_list == "djangorestframework":
         djangorestframework = {
-            "django_api",
-            # "django_api-library"
-            # "django_api-todo"
+            "django-api-blog",
+            "django-api-library",
+            "django-api-todo",
             "djapi-blog",
-            # "djapi-library",
-            # "djapi-todo",
-            # "pastebin-drf-api",
+            "djapi-library",
+            "djapi-todo",
+            "pastebin-drf-api",
         }
         return djangorestframework
 
@@ -58,7 +51,7 @@ def component_list(component_group_list):
     elif component_group_list == "flask":
         flask = {
             "flaskblog",
-            # "flask-chat",
+            "flask-chat",
         }
         return flask
 
